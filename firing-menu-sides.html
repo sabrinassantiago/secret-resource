@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sides - The Firing Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Tangerine:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #f7f4f0;
+            --black: #1a1a1a;
+            --red: #a70101;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--black);
+            line-height: 1.6;
+            padding: 40px 20px 100px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-size: 14px;
+            color: var(--black);
+            text-decoration: none;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--black);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--red);
+            border-bottom-color: var(--red);
+        }
+
+        .course-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+        }
+
+        .course-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 52px;
+            color: var(--red);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .course-subtitle {
+            font-size: 16px;
+            color: var(--black);
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        .theory-section {
+            margin-bottom: 60px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.02);
+            border-left: 3px solid var(--red);
+        }
+
+        .theory-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+
+        .theory-content {
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .theory-content p {
+            margin-bottom: 15px;
+        }
+
+        .item {
+            margin-bottom: 70px;
+        }
+
+        .item-header {
+            margin-bottom: 30px;
+        }
+
+        .item-number {
+            font-size: 13px;
+            color: var(--red);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 28px;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+
+        .item-description {
+            font-size: 14px;
+            color: var(--black);
+            opacity: 0.7;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .menu-details {
+            margin-bottom: 25px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .menu-details-item {
+            margin-bottom: 10px;
+        }
+
+        .menu-details-label {
+            font-weight: 600;
+            display: inline;
+        }
+
+        .chefs-note {
+            background: rgba(255, 248, 220, 0.2);
+            padding: 25px;
+            margin: 20px 0;
+            font-size: 15px;
+            line-height: 1.9;
+            border-left: 3px solid var(--red);
+            font-family: 'Permanent Marker', cursive;
+            color: var(--black);
+            transform: rotate(-0.5deg);
+        }
+
+        .chefs-note strong {
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        .pairing {
+            font-size: 13px;
+            color: var(--black);
+            margin-top: 15px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .template-section {
+            margin-top: 30px;
+        }
+
+        .template-label {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .template-box {
+            background: white;
+            padding: 35px;
+            border-left: 3px solid var(--red);
+            font-size: 15px;
+            line-height: 1.9;
+            white-space: pre-line;
+        }
+
+        .copy-button {
+            background: var(--black);
+            color: var(--cream);
+            border: none;
+            padding: 12px 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .copy-button:hover {
+            background: var(--red);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 100px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(26, 26, 26, 0.2);
+            font-size: 14px;
+        }
+
+        .footer p {
+            margin-bottom: 15px;
+        }
+
+        .footer a {
+            color: var(--black);
+            text-decoration: none;
+            border-bottom: 1px solid var(--black);
+        }
+
+        .footer a:hover {
+            color: var(--red);
+            border-bottom-color: var(--red);
+        }
+
+        @media (max-width: 768px) {
+            .course-title {
+                font-size: 42px;
+            }
+
+            .theory-section {
+                padding: 30px 20px;
+            }
+
+            .template-box {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="firing-menu-home.html" class="back-link">← Back to Menu</a>
+
+        <div class="course-header">
+            <h1 class="course-title">Sides</h1>
+            <p class="course-subtitle">How to handle their response</p>
+        </div>
+
+        <div class="theory-section">
+            <h2 class="theory-title">What Happens After You Fire Them</h2>
+            <div class="theory-content">
+                <p>You sent the email. Now they respond. Most of the time, they will do one of five things:</p>
+
+                <p>1. They will apologize and promise to change. </p>
+2. They will get angry and lash out. </p>
+3. They will ghost and disappear. </p>
+4. They will try to negotiate their way back in.</p> 
+5. Or they will threaten you.</p>
+
+                <p>None of these responses change your decision. You already decided. You already sent the email. Now you just need to hold the boundary and move forward.</p>
+
+                <p>These templates help you stay firm without getting dragged back into the bullshit.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-number">01</div>
+                <h3 class="item-title">When They Apologize</h3>
+                <p class="item-description">And promise it will be different this time</p>
+                
+                <div class="menu-details">
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Ingredients:</span> A firm no, zero room for negotiation, the memory of why you fired them
+                    </div>
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Allergens:</span> Contains finality. Will disappoint clients who thought sorry was enough
+                    </div>
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Best served:</span> Within 24 hours of their apology email
+                    </div>
+                </div>
+            </div>
+
+            <div class="chefs-note">
+                <strong>Chef's Note:</strong> They are sorry they got fired, not sorry for the behavior. If they were actually sorry, they would have fixed it when you gave them the warning. This apology is them trying to manipulate you back into the relationship. Do not fall for it. Send this, then stop checking your email every five minutes to see if they replied again. Your decision stands.
+            </div>
+
+            <div class="template-section">
+                <div class="template-label">The Recipe</div>
+                <div class="template-box">Hi [Client Name],
+
+I appreciate the apology, but my decision stands.
+
+I have thought this through carefully and I believe this is the right move for both of us.
+
+I wish you the best with your projects.
+
+[Your Name]</div>
+                <button class="copy-button" onclick="copyTemplate(this)">Copy Template</button>
+                <p class="pairing">Pairs with: Rereading your original firing email to remember why you did this</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-number">02</div>
+                <h3 class="item-title">When They Get Angry</h3>
+                <p class="item-description">And send you a nasty email or message</p>
+                
+                <div class="menu-details">
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Ingredients:</span> Silence, self control, a folder called "proof I made the right decision"
+                    </div>
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Allergens:</span> May trigger your urge to defend yourself. Resist it.
+                    </div>
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Best served:</span> Never. Do not serve anything. Let them yell into the void.
+                    </div>
+                </div>
+            </div>
+
+            <div class="chefs-note">
+                <strong>Chef's Note:</strong> Do not respond. Seriously. I know you want to defend yourself or tell them to fuck off. Do not do it. Let them be angry. Their anger is not your problem anymore. Save the email in case you need it later for proof, then mute their notifications and go live your life. If they threaten legal action or start saying shit that could hurt your reputation, screenshot everything and talk to someone who knows what they are doing. Otherwise, silence is your power move.
+            </div>
+
+            <div class="template-section">
+                <div class="template-label">The Recipe</div>
+                <div class="template-box">[Do not respond. Save the email. Mute their notifications. Move on.]</div>
+                <p class="pairing">Pairs with: Blocking their number so they cannot text you at 2am</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-number">03</div>
+                <h3 class="item-title">When They Ghost</h3>
+                <p class="item-description">And just stop responding entirely</p>
+                
+                <div class="menu-details">
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Ingredients:</span> One follow up email if you need to, acceptance that they are gone, relief
+                    </div>
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Allergens:</span> May cause you to question if you did something wrong. You did not.
+                    </div>
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Best served:</span> Only if there is an outstanding invoice or deliverable you need to transfer
+                    </div>
+                </div>
+            </div>
+
+            <div class="chefs-note">
+                <strong>Chef's Note:</strong> This is the best possible outcome. They disappeared. You are free. If they owe you money or you need to hand off files, send one follow up email. After that, let it go. Their silence means they accepted your decision. Move their contact to your never again list and forget they exist. Celebrate quietly. You won.
+            </div>
+
+            <div class="template-section">
+                <div class="template-label">The Recipe</div>
+                <div class="template-box">Hi [Client Name],
+
+I am following up on my previous email about [outstanding invoice / file transfer / final deliverable].
+
+Please confirm receipt and let me know how you would like to proceed with [specific action needed].
+
+If I do not hear from you by [date], I will consider this matter closed.
+
+[Your Name]</div>
+                <button class="copy-button" onclick="copyTemplate(this)">Copy Template</button>
+                <p class="pairing">Pairs with: Setting a calendar reminder to write them off if they do not respond</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-number">04</div>
+                <h3 class="item-title">When They Try to Negotiate</h3>
+                <p class="item-description">And ask if there is any way to make it work</p>
+                
+                <div class="menu-details">
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Ingredients:</span> A hard no, zero wiggle room, the confidence to hold your ground
+                    </div>
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Allergens:</span> Will frustrate clients who are used to getting what they want
+                    </div>
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Best served:</span> Immediately after they send the "can we talk about this" email
+                    </div>
+                </div>
+            </div>
+
+            <div class="chefs-note">
+                <strong>Chef's Note:</strong> They want to negotiate because they think you will cave. Do not. You already gave them a chance to fix the problem. They ignored it. Now they want to debate terms like you are running a fucking democracy. You are not. This is your business. Your decision is final. Send this and do not read their counter offer. They will try to make you feel guilty or unreasonable. You are neither.
+            </div>
+
+            <div class="template-section">
+                <div class="template-label">The Recipe</div>
+                <div class="template-box">Hi [Client Name],
+
+I understand you would like to continue working together, but this is not something I am open to discussing further.
+
+My decision is final.
+
+I wish you the best.
+
+[Your Name]</div>
+                <button class="copy-button" onclick="copyTemplate(this)">Copy Template</button>
+                <p class="pairing">Pairs with: Deleting their follow up emails without reading them</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-number">05</div>
+                <h3 class="item-title">When They Threaten You</h3>
+                <p class="item-description">With legal action, bad reviews, or ruining your reputation</p>
+                
+                <div class="menu-details">
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Ingredients:</span> Screenshots of everything, your contract, all correspondence, a calm fucking head
+                    </div>
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Allergens:</span> May cause panic. Breathe. Most threats are just noise.
+                    </div>
+                    <div class="menu-details-item">
+                        <span class="menu-details-label">Best served:</span> Immediately, then document everything and stop engaging
+                    </div>
+                </div>
+            </div>
+
+            <div class="chefs-note">
+                <strong>Chef's Note:</strong> Most threats are bullshit. They are angry and trying to scare you into backing down. Do not back down. Send this email to create a paper trail, then screenshot everything they send you. Save your contract, all emails, all invoices, everything. If they actually follow through with legal action, you will need it. If you have access to a lawyer or legal advice, use it. If you do not, there are freelancer communities and organizations that can point you in the right direction. But honestly? Most of the time, they are just yelling. Let them yell. You are done engaging.
+            </div>
+
+            <div class="template-section">
+                <div class="template-label">The Recipe</div>
+                <div class="template-box">Hi [Client Name],
+
+I take your concerns seriously.
+
+Please direct all future communication to my lawyer at [email/phone if you have one, or just your legal department email while you're consulting legal counsel - like legal@yourname.com or legalyourname@gmail.com].
+
+[Your Name]</div>
+                <button class="copy-button" onclick="copyTemplate(this)">Copy Template</button>
+                <p class="pairing">Pairs with: Creating a folder with every piece of documentation you have on this project</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Want more resources like this? Join my newsletter for templates, systems, and the kind of business advice that actually works.</p>
+            <p><a href="https://sabrinassantiago.myflodesk.com/resources">Join the Newsletter</a></p>
+            <p style="margin-top: 30px;">Made with ♥ by your favorite freelancer, <a href="https://www.linkedin.com/in/sabrss/">Sabrina S. Santiago</a></p>
+            <p style="font-size: 12px; opacity: 0.6; margin-top: 20px;">© 2026 Sabrina S. Santiago. This resource was created exclusively for my community. All rights reserved (but share the link as much as you want)</p>
+        </div>
+    </div>
+
+    <script>
+        function copyTemplate(button) {
+            const templateBox = button.previousElementSibling;
+            const text = templateBox.innerText;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.innerText;
+                button.innerText = 'Copied!';
+                button.style.background = '#a70101';
+                
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.style.background = '#1a1a1a';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

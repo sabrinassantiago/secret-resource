@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Firing Menu - Sabrina S. Santiago</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #f7f4f0;
+            --black: #1a1a1a;
+            --red: #a70101;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--black);
+            line-height: 1.6;
+            padding: 60px 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .menu-header {
+            margin-bottom: 60px;
+        }
+
+        .menu-title {
+            font-family: 'Tangerine', cursive;
+            font-size: 140px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        .menu-subtitle {
+            font-family: 'Instrument Serif', serif;
+            font-size: 20px;
+            color: var(--black);
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        .divider {
+            width: 100px;
+            height: 1px;
+            background: var(--black);
+            margin: 0 auto 40px auto;
+        }
+
+        .menu-description {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--black);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .courses {
+            margin-top: 80px;
+        }
+
+        .course-item {
+            margin-bottom: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .course-item:hover .course-name {
+            color: var(--red);
+        }
+
+        .course-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .course-name {
+            font-family: 'Instrument Serif', serif;
+            font-size: 36px;
+            color: var(--black);
+            font-style: italic;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .course-description {
+            font-size: 14px;
+            color: var(--black);
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        .course-divider {
+            width: 60px;
+            height: 1px;
+            background: rgba(26, 26, 26, 0.2);
+            margin: 40px auto;
+        }
+
+        .footer {
+            margin-top: 100px;
+            font-size: 12px;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .menu-title {
+                font-size: 100px;
+            }
+
+            .course-name {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="menu-header">
+            <div class="menu-title">Menu</div>
+            <div class="menu-subtitle">The Art of Professional Goodbyes</div>
+            <div class="divider"></div>
+            <p class="menu-description">Most freelancers wait too long to fire bad clients. This menu gives you the exact words to end relationships that are not working. Choose your course based on the situation.</p>
+        </div>
+
+        <div class="courses">
+            <div class="course-item" onclick="window.location.href='firing-menu-appetizers.html'">
+                <div class="course-name">Appetizers</div>
+                <div class="course-description">Soft boundaries before you fire</div>
+            </div>
+            
+            <div class="course-divider"></div>
+
+            <div class="course-item" onclick="window.location.href='firing-menu-mains.html'">
+                <div class="course-name">Mains</div>
+                <div class="course-description">The actual firing</div>
+            </div>
+            
+            <div class="course-divider"></div>
+
+            <div class="course-item" onclick="window.location.href='firing-menu-sides.html'">
+                <div class="course-name">Sides</div>
+                <div class="course-description">How to handle their response</div>
+            </div>
+            
+            <div class="course-divider"></div>
+
+            <div class="course-item" onclick="window.location.href='firing-menu-desserts.html'">
+                <div class="course-name">Desserts</div>
+                <div class="course-description">The celebration</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Sabrina S. Santiago</p>
+        </div>
+    </div>
+</body>
+</html>
